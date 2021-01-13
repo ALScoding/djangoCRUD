@@ -1,16 +1,24 @@
 from django.shortcuts import (get_object_or_404,
                               render,
                               HttpResponseRedirect)
+
 from django.shortcuts import render
+from django.urls.resolvers import URLPattern
 
 # relative import of forms
 from .models import GeeksModel
 from .forms import GeeksForm
+from django.urls import path
+# from .views import detail_view
+
+# urlpatterns = [
+#     path('<id>', detail_view),
+# ]
 
 
 def index(request):
     # index
-    return render(request, "create_view.html")
+    return render(request, "index.html")
 
 
 def create_view(request):

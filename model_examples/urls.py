@@ -18,6 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.index),
+    path('create/', views.create_view),
+    path('list/', views.list_view),
+    path('detail/', views.detail_view('<id>')),
+    path('<id>', views.detail_view),
+    path('update/', views.update_view('<id>')),
+    path('delete/', views.delete_view('<id>')),
     path('admin/', admin.site.urls)
 ]
