@@ -105,16 +105,16 @@ def delete_view(request, id):
 def load_view(request):
     context = {}
 
-    file = open("flashcards.json", "r", encoding="utf-8")
-    data = file.read()
-    json_data = json.loads(data)
-    context["data"] = data
+    with open("flashcards.json", "r", encoding="utf-8") as file:
+        data = file.read()
+        json_data = json.loads(data)
+        context["data"] = "Flash Cards Loaded Successfully"
 
-    for flashcard in json_data.get("cards"):
-        FlashcardsModel.objects.create(
-            backside=flashcard.get("backside"),
-            frontside=flashcard.get("frontside"),
-            answer=flashcard.get("answer")
-        )
+        for flashcard in json_data.get("cards"):
+            FlashcardsModel.objects.create(
+                backside=flashcard.get("backside"),
+                frontside=flashcard.get("frontside"),
+                answer=flashcard.get("answer")
+            )
     
     return render(request, "load_view.html", context)
