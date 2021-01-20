@@ -1,0 +1,430 @@
+{
+    "cards": [
+        {
+            "id": 0,
+            "frontside": "あ",
+            "backside": "ア",
+            "answer": "a"
+        },
+        {
+            "id": 1,
+            "frontside": "い",
+            "backside": "イ",
+            "answer": "i"
+        },
+        {
+            "id": 2,
+            "frontside": "う",
+            "backside": "ウ",
+            "answer": "u"
+        },
+        {
+            "id": 3,
+            "frontside": "え",
+            "backside": "エ",
+            "answer": "e"
+        },
+        {
+            "id": 4,
+            "frontside": "お",
+            "backside": "オ",
+            "answer": "o"
+        },
+        {
+            "id": 5,
+            "frontside": "か",
+            "backside": "カ",
+            "answer": "ka"
+        },
+        {
+            "id": 6,
+            "frontside": "き",
+            "backside": "キ",
+            "answer": "ki"
+        },
+        {
+            "id": 7,
+            "frontside": "く",
+            "backside": "ク",
+            "answer": "ku"
+        },
+        {
+            "id": 8,
+            "frontside": "け",
+            "backside": "ケ",
+            "answer": "ke"
+        },
+        {
+            "id": 9,
+            "frontside": "こ",
+            "backside": "コ",
+            "answer": "ko"
+        },
+        {
+            "id": 10,
+            "frontside": "が",
+            "backside": "ガ",
+            "answer": "ga"
+        },
+        {
+            "id": 11,
+            "frontside": "ぎ",
+            "backside": "ギ",
+            "answer": "gi"
+        },
+        {
+            "id": 12,
+            "frontside": "ぐ",
+            "backside": "グ",
+            "answer": "gu"
+        },
+        {
+            "id": 13,
+            "frontside": "げ",
+            "backside": "ゲ",
+            "answer": "ge"
+        },
+        {
+            "id": 14,
+            "frontside": "ご",
+            "backside": "ゴ",
+            "answer": "go"
+        },
+        {
+            "id": 15,
+            "frontside": "さ",
+            "backside": "サ",
+            "answer": "sa"
+        },
+        {
+            "id": 16,
+            "frontside": "し",
+            "backside": "シ",
+            "answer": "shi"
+        },
+        {
+            "id": 17,
+            "frontside": "す",
+            "backside": "ス",
+            "answer": "su"
+        },
+        {
+            "id": 18,
+            "frontside": "せ",
+            "backside": "セ",
+            "answer": "se"
+        },
+        {
+            "id": 19,
+            "frontside": "そ",
+            "backside": "ソ",
+            "answer": "so"
+        },
+        {
+            "id": 20,
+            "frontside": "ざ",
+            "backside": "ザ",
+            "answer": "za"
+        },
+        {
+            "id": 21,
+            "frontside": "じ",
+            "backside": "ジ",
+            "answer": "ji"
+        },
+        {
+            "id": 22,
+            "frontside": "ず",
+            "backside": "ズ",
+            "answer": "zu"
+        },
+        {
+            "id": 23,
+            "frontside": "ぜ",
+            "backside": "ゼ",
+            "answer": "ze"
+        },
+        {
+            "id": 24,
+            "frontside": "ぞ",
+            "backside": "ゾ",
+            "answer": "zo"
+        },
+        {
+            "id": 25,
+            "frontside": "た",
+            "backside": "タ",
+            "answer": "ta"
+        },
+        {
+            "id": 26,
+            "frontside": "ち",
+            "backside": "チ",
+            "answer": "chi"
+        },
+        {
+            "id": 27,
+            "frontside": "つ",
+            "backside": "ツ",
+            "answer": "tsu"
+        },
+        {
+            "id": 28,
+            "frontside": "て",
+            "backside": "テ",
+            "answer": "te"
+        },
+        {
+            "id": 29,
+            "frontside": "と",
+            "backside": "ト",
+            "answer": "to"
+        },
+        {
+            "id": 30,
+            "frontside": "だ",
+            "backside": "ダ",
+            "answer": "da"
+        },
+        {
+            "id": 31,
+            "frontside": "ぢ",
+            "backside": "ヂ",
+            "answer": "dji"
+        },
+        {
+            "id": 32,
+            "frontside": "づ",
+            "backside": "ヅ",
+            "answer": "dzu"
+        },
+        {
+            "id": 33,
+            "frontside": "で",
+            "backside": "デ",
+            "answer": "de"
+        },
+        {
+            "id": 34,
+            "frontside": "ど",
+            "backside": "ド",
+            "answer": "do"
+        },
+        {
+            "id": 35,
+            "frontside": "な",
+            "backside": "ナ",
+            "answer": "na"
+        },
+        {
+            "id": 36,
+            "frontside": "に",
+            "backside": "ニ",
+            "answer": "ni"
+        },
+        {
+            "id": 37,
+            "frontside": "ぬ",
+            "backside": "ヌ",
+            "answer": "nu"
+        },
+        {
+            "id": 38,
+            "frontside": "ね",
+            "backside": "ネ",
+            "answer": "ne"
+        },
+        {
+            "id": 39,
+            "frontside": "の",
+            "backside": "ノ",
+            "answer": "no"
+        },
+        {
+            "id": 40,
+            "frontside": "は",
+            "backside": "ハ",
+            "answer": "ha"
+        },
+        {
+            "id": 41,
+            "frontside": "ひ",
+            "backside": "ヒ",
+            "answer": "hi"
+        },
+        {
+            "id": 42,
+            "frontside": "ふ",
+            "backside": "フ",
+            "answer": "fu"
+        },
+        {
+            "id": 43,
+            "frontside": "へ",
+            "backside": "ヘ",
+            "answer": "he"
+        },
+        {
+            "id": 44,
+            "frontside": "ほ",
+            "backside": "ホ",
+            "answer": "ho"
+        },
+        {
+            "id": 45,
+            "frontside": "ば",
+            "backside": "バ",
+            "answer": "ba"
+        },
+        {
+            "id": 46,
+            "frontside": "び",
+            "backside": "ビ",
+            "answer": "bi"
+        },
+        {
+            "id": 47,
+            "frontside": "ぶ",
+            "backside": "ブ",
+            "answer": "bu"
+        },
+        {
+            "id": 48,
+            "frontside": "べ",
+            "backside": "ベ",
+            "answer": "be"
+        },
+        {
+            "id": 49,
+            "frontside": "ぼ",
+            "backside": "ボ",
+            "answer": "bo"
+        },
+        {
+            "id": 50,
+            "frontside": "ぱ",
+            "backside": "パ",
+            "answer": "pa"
+        },
+        {
+            "id": 51,
+            "frontside": "ぴ",
+            "backside": "ピ",
+            "answer": "pi"
+        },
+        {
+            "id": 52,
+            "frontside": "ぷ",
+            "backside": "プ",
+            "answer": "pu"
+        },
+        {
+            "id": 53,
+            "frontside": "ぺ",
+            "backside": "ペ",
+            "answer": "pe"
+        },
+        {
+            "id": 54,
+            "frontside": "ぽ",
+            "backside": "ポ",
+            "answer": "po"
+        },
+        {
+            "id": 55,
+            "frontside": "ま",
+            "backside": "マ",
+            "answer": "ma"
+        },
+        {
+            "id": 56,
+            "frontside": "み",
+            "backside": "ミ",
+            "answer": "mi"
+        },
+        {
+            "id": 57,
+            "frontside": "む",
+            "backside": "ム",
+            "answer": "mu"
+        },
+        {
+            "id": 58,
+            "frontside": "め",
+            "backside": "メ",
+            "answer": "me"
+        },
+        {
+            "id": 59,
+            "frontside": "も",
+            "backside": "モ",
+            "answer": "mo"
+        },
+        {
+            "id": 60,
+            "frontside": "や",
+            "backside": "ヤ",
+            "answer": "ya"
+        },
+        {
+            "id": 61,
+            "frontside": "ゆ",
+            "backside": "ユ",
+            "answer": "yu"
+        },
+        {
+            "id": 62,
+            "frontside": "よ",
+            "backside": "ヨ",
+            "answer": "yo"
+        },
+        {
+            "id": 63,
+            "frontside": "ら",
+            "backside": "ラ",
+            "answer": "ra"
+        },
+        {
+            "id": 64,
+            "frontside": "り",
+            "backside": "リ",
+            "answer": "ri"
+        },
+        {
+            "id": 65,
+            "frontside": "る",
+            "backside": "ル",
+            "answer": "ru"
+        },
+        {
+            "id": 66,
+            "frontside": "れ",
+            "backside": "レ",
+            "answer": "re"
+        },
+        {
+            "id": 67,
+            "frontside": "ろ",
+            "backside": "ロ",
+            "answer": "ro"
+        },
+        {
+            "id": 68,
+            "frontside": "わ",
+            "backside": "ワ",
+            "answer": "wa"
+        },
+        {
+            "id": 69,
+            "frontside": "を",
+            "backside": "ヲ",
+            "answer": "wo"
+        },
+        {
+            "id": 70,
+            "frontside": "ん",
+            "backside": "ン",
+            "answer": "n"
+        }
+    ]
+}

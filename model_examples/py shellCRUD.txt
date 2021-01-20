@@ -1,0 +1,59 @@
+Microsoft Windows [Version 10.0.18363.1316]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete>cd
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete>cd CRUD
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD>py manage.py shell
+Python 3.8.6 (tags/v3.8.6:db45529, Sep 23 2020, 15:52:53) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from example.models import *
+>>> GeeksModel.objects.all()
+<QuerySet [<GeeksModel: object 1>]>
+>>> FlashcardsModel.objects.all()
+<QuerySet [<FlashcardsModel: あ>]>
+>>> FlashcardsModel.objects.create(frontside='q' backside='q' answer='q')
+  File "<console>", line 1
+    FlashcardsModel.objects.create(frontside='q' backside='q' answer='q')
+                                                 ^
+SyntaxError: invalid syntax
+>>> FlashcardsModel.objects.create(frontside='q', backside='q', answer='q')
+<FlashcardsModel: q>
+>>> FlashcardsModel.objects.all()
+<QuerySet [<FlashcardsModel: あ>, <FlashcardsModel: q>]>
+>>> FlashcardsModel.objects.filter(frontside='q').delete()
+(1, {'example.FlashcardsModel': 1})
+>>> FlashcardsModel.objects.all()
+<QuerySet [<FlashcardsModel: あ>]>
+>>> FlashcardsModel.objects.delete()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'delete'
+>>> FlashcardsModel.objects.all().delete()
+(1, {'example.FlashcardsModel': 1})
+>>> FlashcardsModel.objects.all()
+<QuerySet []>
+>>> FlashcardsModel.objects.create(frontside='わ', backside='ワ', answer='wa')
+<FlashcardsModel: わ>
+>>> FlashcardsModel.objects.create(frontside='ん', backside='ン', answer='n')
+
+KeyboardInterrupt
+>>> FlashcardsModel.objects.create(frontside='ん', backside='ン', answer='n')
+<FlashcardsModel: ん>
+>>> FlashcardsModel.objects.all()
+<QuerySet [<FlashcardsModel: わ>, <FlashcardsModel: ん>]>
+>>> FlashcardsModel.objects.all().delete()
+(2, {'example.FlashcardsModel': 2})
+>>> jsonFile=open('C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD\model_examples\flashcards.json')
+  File "<console>", line 1
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>> jsonFile=open('C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD\model_examples\flashcards.json', 'utf8')
+  File "<console>", line 1
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>> jsonFile=open('C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD\model_examples\flashcards.json', encoding='utf8')
+  File "<console>", line 1
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+>>>
