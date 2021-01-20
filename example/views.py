@@ -1,3 +1,5 @@
+import os
+import json
 from django.shortcuts import (get_object_or_404,
                               render,
                               HttpResponseRedirect)
@@ -6,14 +8,10 @@ from django.shortcuts import render
 from django.urls.resolvers import URLPattern
 
 # relative import of forms
-from .models import GeeksModel
+from .models import GeeksModel, FlashcardsModel
 from .forms import GeeksForm
 from django.urls import path
-# from .views import detail_view
 
-# urlpatterns = [
-#     path('<id>', detail_view),
-# ]
 
 
 def index(request):
@@ -102,3 +100,21 @@ def delete_view(request, id):
         return HttpResponseRedirect("/")
 
     return render(request, "delete_view.html", context)
+
+
+def load_view(request):
+    context = {}
+
+    file = open("flashcards.json", "r", encoding="utf-8")
+    data = file.read()
+    json_data = json.loads(data)
+    context["data"] = data
+
+    for flashcard in json_data.get("cards"):
+        FlashcardsModel.objects.create(
+            backside=flashcard.get("backside"),
+            frontside=flashcard.get("frontside"),
+            answer=flashcard.get("answer")
+        )
+    
+    return render(request, "load_view.html", context)
