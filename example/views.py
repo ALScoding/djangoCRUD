@@ -6,8 +6,8 @@ from django.shortcuts import render
 from django.urls.resolvers import URLPattern
 
 # relative import of forms
-from .models import GeeksModel
-from .forms import GeeksForm
+from .models import FlashcardsModel
+from .forms import FlashcardsForm
 from django.urls import path
 # from .views import detail_view
 
@@ -27,7 +27,7 @@ def create_view(request):
     context = {}
 
     # add the dictionary during initialization
-    form = GeeksForm(request.POST or None)
+    form = FlashcardsForm(request.POST or None)
     if form.is_valid():
         form.save()
 
@@ -41,7 +41,7 @@ def list_view(request):
     context = {}
 
     # add the dictionary during initialization
-    context["dataset"] = GeeksModel.objects.all()
+    context["dataset"] = FlashcardsModel.objects.all()
 
     return render(request, "list_view.html", context)
 
@@ -53,7 +53,7 @@ def detail_view(request, id):
     context = {}
 
     # add the dictionary during initialization
-    context["data"] = GeeksModel.objects.get(id=id)
+    context["data"] = FlashcardsModel.objects.get(id=id)
 
     return render(request, "detail_view.html", context)
 
@@ -68,10 +68,10 @@ def update_view(request, id):
     context = {}
 
     # fetch the object related to passed id
-    obj = get_object_or_404(GeeksModel, id=id)
+    obj = get_object_or_404(FlashcardsModel, id=id)
 
     # pass the object as instance in form
-    form = GeeksForm(request.POST or None, instance=obj)
+    form = FlashcardsForm(request.POST or None, instance=obj)
 
     # save the data from the form and
     # redirect to detail_view
@@ -92,7 +92,7 @@ def delete_view(request, id):
     context = {}
 
     # fetch the object related to passed id
-    obj = get_object_or_404(GeeksModel, id=id)
+    obj = get_object_or_404(FlashcardsModel, id=id)
 
     if request.method == "POST":
         # delete object
