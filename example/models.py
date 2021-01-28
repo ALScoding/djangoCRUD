@@ -12,14 +12,24 @@ class FlashcardsModel(models.Model):
         return self.frontside
 
 
+class UnwantedModel(models.Model):
+    first = models.CharField(max_length=24)
+    second = models.CharField(max_length=24)
+    blah = models.CharField(max_length=44)
+
+    def __str__(self):
+        return self.first
+
+
+
 # declare a new model with a name "GeeksModel"
-class GeeksModel(models.Model):
+# class GeeksModel(models.Model):
 
     # fields of the model
-    title = models.CharField(max_length=200)
-    description = models.TextField()
+    # title = models.CharField(max_length=200)
+    # description = models.TextField()
 
     # renames the instances of the model
     # with their title name
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+        # return self.title

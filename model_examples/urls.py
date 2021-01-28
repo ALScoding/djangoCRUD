@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    path('load/', views.load_view, name='load'),
     path('', views.index, name='index'),
     path('create/', views.create_view, name='create'),
     path('list/', views.list_view, name='list'),

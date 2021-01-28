@@ -1,3 +1,20 @@
+revert migrations:
+py manage.py migrate example 0005
+py manage.py migrate example 0004
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD>py manage.py migrate example 0006
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+        HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/2.0/ref/databases/#mysql-sql-mode
+Operations to perform:
+  Target specific migration: 0006_delete_geeksmodel, from example
+Running migrations:
+  Rendering model states... DONE
+  Unapplying example.0007_unwantedmodel... OK
+
+
 Microsoft Windows [Version 10.0.18363.1316]
 (c) 2019 Microsoft Corporation. All rights reserved.
 

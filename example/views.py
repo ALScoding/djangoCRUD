@@ -1,7 +1,8 @@
+import os
+import json
 from django.shortcuts import (get_object_or_404,
                               render,
                               HttpResponseRedirect)
-
 from django.shortcuts import render
 from django.urls.resolvers import URLPattern
 
@@ -102,3 +103,20 @@ def delete_view(request, id):
         return HttpResponseRedirect("/")
 
     return render(request, "delete_view.html", context)
+
+def load_view(request):
+    context = {}
+
+    with open("flashcards.json", "r", encoding="utf-8") as file:
+        data = file.read()
+        json_data = json.loads(data)
+        context["data"] = "Flash Cards Loaded Successfully"
+
+        for flashcard in json_data.get("cards"):
+            FlashcardsModel.objects.create(
+                backside=flashcard.get("backside"),
+                frontside=flashcard.get("frontside"),
+                answer=flashcard.get("answer")
+            )
+
+    return render(request, "load_view.html", context) 
