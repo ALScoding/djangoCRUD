@@ -106,7 +106,8 @@ def delete_view(request, id):
 
 def load_view(request):
     context = {}
-
+    # loads flashcards.json and creates objects in the database
+    # utf-8 encoding fixes problem with using Japanese characters
     with open("flashcards.json", "r", encoding="utf-8") as file:
         data = file.read()
         json_data = json.loads(data)

@@ -75,6 +75,100 @@ SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in positio
 SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
 >>>
 
+    not using:
     # text = models.CharField(max_length=50)
     # number = models.IntegerField(null=True)
     # url = models.URLField(default='www.example.com')
+
+
+
+
+
+Microsoft Windows [Version 10.0.19042.746]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete>cd CRUD
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD>py manage.py makemigrations
+Migrations for 'example':
+  example\migrations\0007_group_person.py
+    - Create model Person
+    - Create model Group
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD>py manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (mysql.W002) MySQL Strict Mode is not set for database connection 'default'
+        HINT: MySQL's Strict Mode fixes many data integrity problems in MySQL, such as data truncation upon insertion, by escalating warnings into errors. It is strongly recommended you activate it. See: https://docs.djangoproject.com/en/3.1/ref/databases/#mysql-sql-mode
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, example, sessions
+Running migrations:
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying example.0007_group_person... OK
+
+C:\Users\Name\Documents\testarea\DJANGO ORM\7. Create, Update, and Delete\CRUD>py manage.py shell
+Python 3.8.6 (tags/v3.8.6:db45529, Sep 23 2020, 15:52:53) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from example.models import Person, Group
+>>> Person.objects.create(name='Giron',email='Giron@gmail.com')
+<Person: Person object (1)>
+>>> Person.objects.create(name='Alexander',email='ALS@gmail.com')
+<Person: Person object (2)>
+>>> Group.objects.create(name='study group',person=Person.objects.get(email='Giron@gmail.com'))
+<Group: Group object (1)>
+>>> Group.objects.filter(email='Giron@gmail.com')'ALS@gmai
+  File "<console>", line 1
+    Group.objects.filter(email='Giron@gmail.com')'ALS@gmai
+                                                         ^
+SyntaxError: EOL while scanning string literal
+>>> Group.objects.filter(email='Giron@gmail.com')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1377, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1258, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1084, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\Name\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\sql\query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'email' into field. Choices are: id, name, person, person_id
+>>> Group.objects.filter(person__name=Giron)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Giron' is not defined
+>>> Group.objects.filter(person__name='Giron')
+<QuerySet [<Group: Group object (1)>]>
+>>> Group.objects.filter(person__name='Gironjjjjjj')
+<QuerySet []>
+>>> Group.objects.filter(person__name='Alexander')
+<QuerySet []>
+>>> Group.objects.filter(person__name='Alexander')
+<QuerySet []>
+>>> Person.objects.values()
+<QuerySet [{'id': 1, 'name': 'Giron', 'email': 'Giron@gmail.com'}, {'id': 2, 'name': 'Alexander', 'email': 'ALS@gmail.com'}]>
+>>> Group.objects.all()
+<QuerySet [<Group: Group object (1)>]>
+>>> Group.objects.create(name='study group',person=Person.objects.get(email='ALS@gmail.com'))
+<Group: Group object (2)>
+>>> Group.objects.all()
+<QuerySet [<Group: Group object (1)>, <Group: Group object (2)>]>
+>>> Group.objects.filter(person__name='Alexander')
+<QuerySet [<Group: Group object (2)>]>
+>>> print(Group.objects.filter(person__name='Alexander').query)
+SELECT `example_group`.`id`, `example_group`.`name`, `example_group`.`person_id` FROM `example_group` INNER JOIN `example_person` ON (`example_group`.`person_id` = `example_person`.`id`) WHERE `example_person`.`name` = Alexander

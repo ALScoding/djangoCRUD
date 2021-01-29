@@ -12,14 +12,14 @@ class FlashcardsModel(models.Model):
         return self.frontside
 
 
-class UnwantedModel(models.Model):
-    first = models.CharField(max_length=24)
-    second = models.CharField(max_length=24)
-    blah = models.CharField(max_length=44)
+class Person(models.Model):
+    name = models.CharField(max_length=64)
+    email = models.CharField(max_length=128)
 
-    def __str__(self):
-        return self.first
 
+class Group(models.Model):
+    name = models.CharField(max_length=64)
+    person = models.ForeignKey(Person, on_delete=models.SET_NULL, null=True)
 
 
 # declare a new model with a name "GeeksModel"
