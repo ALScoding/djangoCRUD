@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'model_examples.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'DBforFlashcards',
-        'HOST': 'mydbinstancia.cheglcfiw9dg.us-east-2.rds.amazonaws.com',
-        'USER': 'ALSadmin',
-        'PASSWORD': 'masterpasswww',
-        'PORT': '3306',
+        'HOST': 'newdbinstance.cheglcfiw9dg.us-east-2.rds.amazonaws.com',
+        'USER': 'postgres',
+        'PASSWORD': 'masterflash',
+        'PORT': '5432',
     }
 }
 
